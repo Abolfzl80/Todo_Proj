@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+       <ul>
+          {% for to in todo %}
+              <li>
+                  {{ to['id'] }}
+              <br>
+                  {{ to['title'] }}
+              <br>
+                  {{ to['description'] }}
+              <br>
+                  {{ to['date'] }}
+              <br>
+                  {{ to['done'] }}
+              <br>
+              <a href="/delete/{{to['id']}}">delete</a>
+              <a href="/done/{{to['id']}}">done</a>
+              <br>
+              <br><br>
+              </li>
+          {% endfor %}
+       </ul>  
+</body>
+</html>
