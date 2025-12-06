@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title></title>
+    <title>add what to do!</title>
+    <style>
+        * {
+            background-color: black;
+        }
+        label {
+            color: whitesmoke;
+        }
+        input {
+            color: whitesmoke;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid whitesmoke;
+            border-radius: 8px;
+            font-size: medium;            
+        }
+    </style>
 </head>
 <body>
-    <form action="/add" method="post">
-        <label>title:</label>
-        <input type="text" name="title">
-        <br>
-        <label>description:</label>
-        <input type="text" name="description">
-        <br>
-        <label>date:</label>
-        <input type="date" name="date">
-        <br>
-        <input type="submit" value="submit">
-    </form>
+    <div class="create">
+        <form action="/add" method="post">
+            <label>title:</label>
+            <input type="text" name="title" required>
+            <br>
+            <label>description:</label>
+            <input type="text" name="description">
+            <br>
+            <label>date:</label>
+            <input type="date" name="date" required>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </div>
 </body>
 </html>

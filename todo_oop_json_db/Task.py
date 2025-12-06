@@ -4,7 +4,7 @@ class Task:
     def __init__(self):
         self.db = "data.json"
 
-    def All_Tasks(self):
+    def all_tasks(self):
         try:
             with open(self.db, "r", encoding="utf-8") as f:
                 return json.load(f)
@@ -12,7 +12,7 @@ class Task:
             return "Error 404!"
 
         
-    def Add_New_Task(self, title: str, describe: str, date):
+    def add_new_task(self, title: str, describe: str, date):
         try:
             with open(self.db, "r", encoding="utf-8") as f:
                 t = json.load(f)
@@ -31,7 +31,7 @@ class Task:
             json.dump(t, f, ensure_ascii=False, indent=4)
         return "added new Task Successfully!"
     
-    def Dele_Task(self, title):
+    def dele_task(self, title):
         try:
             if os.path.exists(self.db): 
                 de = False
@@ -50,7 +50,7 @@ class Task:
         except:
             return "Json File NOT Found 404!"
         
-    def Show_Not_Finished_Task(self):
+    def show_not_finished_task(self):
         try:
             with open(self.db, "r", encoding="utf-8") as f:
                 t = json.load(f)
@@ -60,7 +60,7 @@ class Task:
         except:
             return "Json File NOT Found 404!"
         
-    def Finish_Task(self, title):
+    def finish_task(self, title):
         try:
             if os.path.exists(self.db): 
                 fi = False
@@ -81,14 +81,3 @@ class Task:
             return "Json File NOT Found 404!"
 
         
-
-dd = Task()
-
-print(dd.Add_New_Task("read book", "reading book for 2H", "1404.9.1"))
-print(dd.Add_New_Task("play game", "play cs2 for 3H", "1404.8.20"))
-print(dd.Add_New_Task("asleep", "just sleep:)", "1404.8.21"))
-
-print(dd.All_Tasks())
-print(dd.Dele_Task("play game"))
-dd.Show_Not_Finished_Task()
-print(dd.Finish_Task("play game"))
